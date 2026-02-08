@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 200px;
+  margin: 10px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.searchbar {
+  padding: 10px;
+}
+.ResCard {
+  margin: 5px;
+  padding: 5px;
+  width: 200px;
+  height: 400px;
+}
+.res-logo {
+  width: 195px;
+  height: 195px;
+}
+
+.ResCard:hover {
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+.res-cards {
+  display: flex;
+}

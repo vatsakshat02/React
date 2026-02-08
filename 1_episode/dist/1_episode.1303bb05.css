@@ -1,0 +1,46 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+  margin: 10px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.searchbar {
+  padding: 10px;
+}
+
+.ResCard {
+  width: 200px;
+  height: 400px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.res-logo {
+  width: 195px;
+  height: 195px;
+}
+
+.ResCard:hover {
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 10px #0003);
+}
+
+.res-cards {
+  display: flex;
+}
+/*# sourceMappingURL=1_episode.1303bb05.css.map */
