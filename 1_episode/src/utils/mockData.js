@@ -1,56 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-/*
-Header:
-- Nav links
-- Logo
-Body:
-- Searchbar
-- Card container
-    - food card:
-      -Name,img,cuisine,delivery time,rating
-Footer:
--Copyright
--links
--address
--Contact
-*/
-const Header = () => (
-  <div className="header">
-    <div className="logo">
-      <img />
-    </div>
-    <div className="navbar">
-      <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
-
-const ResCard = (props) => {
-  const { resData } = props;
-  return (
-    <div className="ResCard" style={{ backgroundColor: '#f0f0f0' }}>
-      <img
-        className="res-logo"
-        src={
-          'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/' +
-          resData.card.card.info.cloudinaryImageId
-        }
-      />
-      <h3>{resData.card.card.info.name}</h3>
-      <h4>{resData.card.card.info.cuisines.join(', ')}</h4>
-      <h4>{resData.card.card.info.avgRating} stars</h4>
-      <h4>{resData.card.card.info.sla.deliveryTime}</h4>
-    </div>
-  );
-};
-
 const resList = [
   {
     card: {
@@ -481,24 +428,5 @@ const resList = [
     },
   },
 ];
-const Body = () => (
-  <div className="body">
-    <div className="searchbar">Search</div>
-    <div className="res-cards">
-      <ResCard resData={resList[0]} />
-      <ResCard resData={resList[1]} />
-      <ResCard resData={resList[2]} />
-      <ResCard resData={resList[3]} />
-    </div>
-  </div>
-);
-const AppLayout = () => (
-  <div className="app">
-    <Header />
-    <Body />
-  </div>
-);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<AppLayout />);
+export default resList;

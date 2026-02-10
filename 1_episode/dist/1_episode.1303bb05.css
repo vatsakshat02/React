@@ -5,11 +5,11 @@
 }
 
 .logo {
-  width: 200px;
-  margin: 10px;
+  width: 100px;
 }
 
 .navbar ul {
+  margin-top: 25px;
   list-style-type: none;
   display: flex;
 }
@@ -42,5 +42,10 @@
 
 .res-cards {
   display: flex;
+}
+
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
 }
 /*# sourceMappingURL=1_episode.1303bb05.css.map */
