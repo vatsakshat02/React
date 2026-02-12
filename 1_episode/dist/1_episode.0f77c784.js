@@ -17431,7 +17431,12 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constant = require("../utils/constant");
-const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+var _react = require("react");
+var _s = $RefreshSig$();
+const Header = ()=>{
+    _s();
+    const [btnNameReact, setbtnNamereact] = (0, _react.useState)('login');
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -17441,13 +17446,13 @@ const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "logo"
                 }, void 0, false, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 6,
-                    columnNumber: 7
+                    lineNumber: 9,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 5,
-                columnNumber: 5
+                lineNumber: 8,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "navbar",
@@ -17457,47 +17462,60 @@ const Header = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: "Home"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 10,
-                            columnNumber: 9
+                            lineNumber: 13,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "About Us"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 11,
-                            columnNumber: 9
+                            lineNumber: 14,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Contact Us"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 12,
-                            columnNumber: 9
+                            lineNumber: 15,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: "Cart"
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 13,
-                            columnNumber: 9
+                            lineNumber: 16,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: "login",
+                            onClick: ()=>{
+                                btnNameReact === 'Login' ? setbtnNamereact('Logout') : setbtnNamereact('Login');
+                            },
+                            children: btnNameReact
+                        }, void 0, false, {
+                            fileName: "src/components/Header.js",
+                            lineNumber: 17,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 9,
-                    columnNumber: 7
+                    lineNumber: 12,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 8,
-                columnNumber: 5
+                lineNumber: 11,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 4,
-        columnNumber: 3
+        lineNumber: 7,
+        columnNumber: 5
     }, undefined);
+};
+_s(Header, "AwT2z2f0NE14CRje4gfzDPe0x08=");
 _c = Header;
 exports.default = Header;
 var _c;
@@ -17508,7 +17526,7 @@ $RefreshReg$(_c, "Header");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../utils/constant":"2QBK6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2QBK6":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../utils/constant":"2QBK6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"2QBK6":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CDN_URl", ()=>CDN_URl);
@@ -19837,126 +19855,110 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _resCard = require("./ResCard");
 var _resCardDefault = parcelHelpers.interopDefault(_resCard);
-var _mockData = require("../utils/mockData");
-var _mockDataDefault = parcelHelpers.interopDefault(_mockData);
 var _react = require("react");
+var _shimmer = require("./Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
 var _s = $RefreshSig$();
-let listofRestaurantsJS = [
-    {
-        info: {
-            id: '93957',
-            name: 'The Burger Club',
-            cloudinaryImageId: 'FOOD_CATALOG/IMAGES/CMS/2025/9/7/f7c46f0b-5e13-4b9e-bdae-eeb1c9bf7252_e7fc437c-c762-4a19-b426-2fc080e23c4b.jpg',
-            locality: 'B Block',
-            areaName: 'Sector 41',
-            costForTwo: "\u20B9250 for two",
-            cuisines: [
-                'Burgers',
-                'wrap',
-                'Salads',
-                'Fast Food',
-                'Desserts',
-                'Coffee',
-                'Beverages'
-            ],
-            avgRating: 3,
-            parentId: '2285',
-            avgRatingString: '3.0',
-            totalRatingsString: '20K+',
-            promoted: true,
-            adTrackingId: 'cid=1b5549a1-c663-4b77-9de5-4b06162f7783~p=0~adgrpid=1b5549a1-c663-4b77-9de5-4b06162f7783#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=93957~plpr=COLLECTION~eid=d327bbf7-5e85-429d-8426-3c1a55b04443~srvts=1770557783415~collid=83637',
-            sla: {
-                deliveryTime: 28,
-                lastMileTravel: 4.7,
-                serviceability: 'SERVICEABLE',
-                slaString: '25-30 mins',
-                lastMileTravelString: '4.7 km',
-                iconType: 'ICON_TYPE_EMPTY'
-            }
-        }
-    },
-    {
-        info: {
-            id: '93952',
-            name: 'kfc',
-            cloudinaryImageId: 'FOOD_CATALOG/IMAGES/CMS/2025/9/7/f7c46f0b-5e13-4b9e-bdae-eeb1c9bf7252_e7fc437c-c762-4a19-b426-2fc080e23c4b.jpg',
-            locality: 'B Block',
-            areaName: 'Sector 41',
-            costForTwo: "\u20B9250 for two",
-            cuisines: [
-                'Burgers',
-                'wrap',
-                'Salads',
-                'Fast Food',
-                'Desserts',
-                'Coffee',
-                'Beverages'
-            ],
-            avgRating: 4.2,
-            parentId: '2285',
-            avgRatingString: '4.0',
-            totalRatingsString: '20K+',
-            promoted: true,
-            adTrackingId: 'cid=1b5549a1-c663-4b77-9de5-4b06162f7783~p=0~adgrpid=1b5549a1-c663-4b77-9de5-4b06162f7783#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=93957~plpr=COLLECTION~eid=d327bbf7-5e85-429d-8426-3c1a55b04443~srvts=1770557783415~collid=83637',
-            sla: {
-                deliveryTime: 28,
-                lastMileTravel: 4.7,
-                serviceability: 'SERVICEABLE',
-                slaString: '25-30 mins',
-                lastMileTravelString: '4.7 km',
-                iconType: 'ICON_TYPE_EMPTY'
-            }
-        }
-    }
-];
 const Body = ()=>{
     _s();
-    let [listofRestaurants, setlistRestaurants] = (0, _react.useState)((0, _mockDataDefault.default));
+    let [listofRestaurants, setlistRestaurants] = (0, _react.useState)([]);
+    let [filteredRestaurant, setfilteredRestaurant] = (0, _react.useState)([]);
+    const [searchText, setSearchText] = (0, _react.useState)('');
+    (0, _react.useEffect)(()=>{
+        fetchData();
+    }, []);
+    const fetchData = async ()=>{
+        const data = await fetch('https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING');
+        const response = await data.json();
+        console.log(response);
+        setlistRestaurants(response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setfilteredRestaurant(response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    };
+    //conditional rendering
+    if (listofRestaurants.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/components/Body.js",
+        lineNumber: 37,
+        columnNumber: 12
+    }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "filter",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "filter-btn",
-                    onClick: ()=>{
-                        //we need filter logic over here
-                        const filteredList = listofRestaurants.filter((res)=>res.card.card.info.avgRating > 4.5);
-                        setlistRestaurants(filteredList);
-                    },
-                    children: "Top Rated"
-                }, void 0, false, {
-                    fileName: "src/components/Body.js",
-                    lineNumber: 82,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "search",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                className: "searchbox",
+                                value: searchText,
+                                onChange: (e)=>{
+                                    setSearchText(e.target.value);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/Body.js",
+                                lineNumber: 43,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>{
+                                    const filteredRestaurant = listofRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                                    setfilteredRestaurant(filteredRestaurant);
+                                },
+                                children: "Search"
+                            }, void 0, false, {
+                                fileName: "src/components/Body.js",
+                                lineNumber: 52,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "filter-btn",
+                        onClick: ()=>{
+                            //we need filter logic over here
+                            const filteredList = listofRestaurants.filter((res)=>res.info.avgRating > 4.5);
+                            setlistRestaurants(filteredList);
+                        },
+                        children: "Top Rated"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 63,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 81,
+                lineNumber: 41,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-cards",
-                children: listofRestaurants.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
+                children: filteredRestaurant.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resCardDefault.default), {
                         resData: restaurant
-                    }, restaurant.card.card.info.id, false, {
+                    }, restaurant.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 97,
+                        lineNumber: 78,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 95,
+                lineNumber: 76,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 80,
+        lineNumber: 40,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "BsNjCEFixxpxY5xxONqjU9bus0w=");
+_s(Body, "LQH4riVtd+uXL+WDe/DxUrrjR/Q=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -19967,7 +19969,7 @@ $RefreshReg$(_c, "Body");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","./ResCard":"fKnAq","../utils/mockData":"4sSQA","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U"}],"fKnAq":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","./ResCard":"fKnAq","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react":"jMk1U","./Shimmer":"fSZbx"}],"fKnAq":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$3303 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$3303.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -19981,7 +19983,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constant = require("../utils/constant");
 const ResCard = (props)=>{
     const { resData } = props;
-    const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.card.card.info;
+    const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.info;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "ResCard",
         style: {
@@ -19990,24 +19992,24 @@ const ResCard = (props)=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "res-logo",
-                src: (0, _constant.CDN_URl) + resData.card.card.info.cloudinaryImageId
+                src: (0, _constant.CDN_URl) + resData.info.cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/ResCard.js",
-                lineNumber: 10,
+                lineNumber: 9,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                 children: name
             }, void 0, false, {
                 fileName: "src/components/ResCard.js",
-                lineNumber: 14,
+                lineNumber: 13,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: cuisines.join(', ')
             }, void 0, false, {
                 fileName: "src/components/ResCard.js",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
@@ -20017,20 +20019,20 @@ const ResCard = (props)=>{
                 ]
             }, void 0, true, {
                 fileName: "src/components/ResCard.js",
-                lineNumber: 16,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                 children: sla.deliveryTime
             }, void 0, false, {
                 fileName: "src/components/ResCard.js",
-                lineNumber: 17,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ResCard.js",
-        lineNumber: 9,
+        lineNumber: 8,
         columnNumber: 5
     }, undefined);
 };
@@ -20044,441 +20046,101 @@ $RefreshReg$(_c, "ResCard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","../utils/constant":"2QBK6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"4sSQA":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","../utils/constant":"2QBK6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"fSZbx":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$9ecf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$9ecf.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9ecf.prelude(module);
+
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const resList = [
-    {
-        card: {
-            card: {
-                '@type': 'type.googleapis.com/swiggy.presentation.food.v2.Restaurant',
-                info: {
-                    id: '93957',
-                    name: 'The Burger Club',
-                    cloudinaryImageId: 'FOOD_CATALOG/IMAGES/CMS/2025/9/7/f7c46f0b-5e13-4b9e-bdae-eeb1c9bf7252_e7fc437c-c762-4a19-b426-2fc080e23c4b.jpg',
-                    locality: 'B Block',
-                    areaName: 'Sector 41',
-                    costForTwo: "\u20B9250 for two",
-                    cuisines: [
-                        'Burgers',
-                        'wrap',
-                        'Salads',
-                        'Fast Food',
-                        'Desserts',
-                        'Coffee',
-                        'Beverages'
-                    ],
-                    avgRating: 4,
-                    parentId: '2285',
-                    avgRatingString: '4.0',
-                    totalRatingsString: '20K+',
-                    promoted: true,
-                    adTrackingId: 'cid=1b5549a1-c663-4b77-9de5-4b06162f7783~p=0~adgrpid=1b5549a1-c663-4b77-9de5-4b06162f7783#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=93957~plpr=COLLECTION~eid=d327bbf7-5e85-429d-8426-3c1a55b04443~srvts=1770557783415~collid=83637',
-                    sla: {
-                        deliveryTime: 28,
-                        lastMileTravel: 4.7,
-                        serviceability: 'SERVICEABLE',
-                        slaString: '25-30 mins',
-                        lastMileTravelString: '4.7 km',
-                        iconType: 'ICON_TYPE_EMPTY'
-                    },
-                    availability: {
-                        nextCloseTime: '2026-02-09 04:30:00',
-                        opened: true
-                    },
-                    badges: {},
-                    isOpen: true,
-                    type: 'F',
-                    badgesV2: {
-                        entityBadges: {
-                            textBased: {},
-                            imageBased: {},
-                            textExtendedBadges: {}
-                        }
-                    },
-                    aggregatedDiscountInfoV3: {
-                        header: 'ITEMS',
-                        subHeader: "AT \u20B949",
-                        logoCtx: {
-                            text: 'BENEFITS'
-                        }
-                    },
-                    orderabilityCommunication: {
-                        title: {},
-                        subTitle: {},
-                        message: {},
-                        customIcon: {},
-                        commsStyling: {}
-                    },
-                    differentiatedUi: {
-                        displayType: 'ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT',
-                        differentiatedUiMediaDetails: {
-                            mediaType: 'ADS_MEDIA_ENUM_IMAGE',
-                            lottie: {},
-                            video: {}
-                        }
-                    },
-                    reviewsSummary: {},
-                    displayType: 'RESTAURANT_DISPLAY_TYPE_DEFAULT',
-                    restaurantOfferPresentationInfo: {},
-                    externalRatings: {
-                        aggregatedRating: {
-                            rating: '--'
-                        }
-                    },
-                    ratingsDisplayPreference: 'RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY',
-                    campaignId: '1b5549a1-c663-4b77-9de5-4b06162f7783'
-                },
-                analytics: {},
-                cta: {
-                    link: 'swiggy://menu?restaurant_id=93957&source=collection&query=Burger',
-                    text: 'RESTAURANT_MENU',
-                    type: 'DEEPLINK'
-                },
-                widgetId: 'collectionV5RestaurantListWidget_SimRestoRelevance_food'
-            },
-            relevance: {
-                type: 'RELEVANCE_TYPE_ON_MENU_RETURN',
-                sectionId: 'MENU_RETURN_FOOD'
-            }
-        }
-    },
-    {
-        card: {
-            card: {
-                '@type': 'type.googleapis.com/swiggy.presentation.food.v2.Restaurant',
-                info: {
-                    id: '959341',
-                    name: 'Popeyes',
-                    cloudinaryImageId: 'FOOD_CATALOG/IMAGES/CMS/2025/6/27/fbbd2b7e-24b9-4fac-9609-58758c109d74_c23df77b-d98d-4ba9-b7fb-1f3f1e9925db.jpg',
-                    locality: 'Food court of tha Mall',
-                    areaName: 'Sector-43',
-                    costForTwo: "\u20B9350 for two",
-                    cuisines: [
-                        'Burgers',
-                        'Fast Food',
-                        'Rolls & Wraps'
-                    ],
-                    avgRating: 4.6,
-                    parentId: '397044',
-                    avgRatingString: '4.6',
-                    totalRatingsString: '1.3K+',
-                    sla: {
-                        deliveryTime: 30,
-                        lastMileTravel: 4.1,
-                        serviceability: 'SERVICEABLE',
-                        slaString: '25-30 mins',
-                        lastMileTravelString: '4.1 km',
-                        iconType: 'ICON_TYPE_EMPTY'
-                    },
-                    availability: {
-                        nextCloseTime: '2026-02-09 01:00:00',
-                        opened: true
-                    },
-                    badges: {
-                        imageBadges: [
-                            {
-                                imageId: 'Ratnesh_Badges/Rx_Awards_2025/Newcomers.png',
-                                description: 'Delivery!'
-                            }
-                        ]
-                    },
-                    isOpen: true,
-                    type: 'F',
-                    badgesV2: {
-                        entityBadges: {
-                            textBased: {},
-                            imageBased: {
-                                badgeObject: [
-                                    {
-                                        attributes: {
-                                            description: 'Delivery!',
-                                            imageId: 'Ratnesh_Badges/Rx_Awards_2025/Newcomers.png'
-                                        }
-                                    }
-                                ]
-                            },
-                            textExtendedBadges: {}
-                        }
-                    },
-                    aggregatedDiscountInfoV3: {
-                        header: '50% OFF',
-                        discountTag: 'FLAT DEAL',
-                        logoCtx: {
-                            text: 'BENEFITS'
-                        }
-                    },
-                    orderabilityCommunication: {
-                        title: {},
-                        subTitle: {},
-                        message: {},
-                        customIcon: {},
-                        commsStyling: {}
-                    },
-                    differentiatedUi: {
-                        displayType: 'ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT',
-                        differentiatedUiMediaDetails: {
-                            mediaType: 'ADS_MEDIA_ENUM_IMAGE',
-                            lottie: {},
-                            video: {}
-                        }
-                    },
-                    reviewsSummary: {},
-                    displayType: 'RESTAURANT_DISPLAY_TYPE_DEFAULT',
-                    restaurantOfferPresentationInfo: {},
-                    externalRatings: {
-                        aggregatedRating: {
-                            rating: '--'
-                        }
-                    },
-                    ratingsDisplayPreference: 'RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY'
-                },
-                analytics: {},
-                cta: {
-                    link: 'swiggy://menu?restaurant_id=959341&source=collection&query=Burger',
-                    text: 'RESTAURANT_MENU',
-                    type: 'DEEPLINK'
-                },
-                widgetId: 'collectionV5RestaurantListWidget_SimRestoRelevance_food'
-            },
-            relevance: {
-                type: 'RELEVANCE_TYPE_ON_MENU_RETURN',
-                sectionId: 'MENU_RETURN_FOOD'
-            }
-        }
-    },
-    {
-        card: {
-            card: {
-                '@type': 'type.googleapis.com/swiggy.presentation.food.v2.Restaurant',
-                info: {
-                    id: '12517',
-                    name: 'The Wab Cafe ',
-                    cloudinaryImageId: 'FOOD_CATALOG/IMAGES/CMS/2025/5/12/62e00ac4-7d03-40cf-a49c-cbb65c4edc61_8eb3cc13-d6b4-4af7-b2ec-65a47622b949.jpg',
-                    locality: 'Sector 18',
-                    areaName: 'Sector 18',
-                    costForTwo: "\u20B9200 for two",
-                    cuisines: [
-                        'Burgers',
-                        'Fast Food',
-                        'Continental',
-                        'American',
-                        'Beverages',
-                        'Desserts'
-                    ],
-                    avgRating: 4.3,
-                    parentId: '669869',
-                    avgRatingString: '4.3',
-                    totalRatingsString: '20K+',
-                    promoted: true,
-                    adTrackingId: 'cid=a69873fb-d102-46a8-a767-857da09eccb1~p=1~adgrpid=a69873fb-d102-46a8-a767-857da09eccb1#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=12517~plpr=COLLECTION~eid=4dfdfa6e-e1fe-434f-ae7f-a314ae043940~srvts=1770557783415~collid=83637',
-                    sla: {
-                        deliveryTime: 27,
-                        lastMileTravel: 1.4,
-                        serviceability: 'SERVICEABLE',
-                        slaString: '25-30 mins',
-                        lastMileTravelString: '1.4 km',
-                        iconType: 'ICON_TYPE_EMPTY'
-                    },
-                    availability: {
-                        nextCloseTime: '2026-02-08 23:59:00',
-                        opened: true
-                    },
-                    badges: {
-                        imageBadges: [
-                            {
-                                imageId: 'android/static-assets/icons/big_rx.png',
-                                description: 'bolt!'
-                            }
-                        ]
-                    },
-                    isOpen: true,
-                    type: 'F',
-                    badgesV2: {
-                        entityBadges: {
-                            textBased: {},
-                            imageBased: {
-                                badgeObject: [
-                                    {
-                                        attributes: {
-                                            imageId: 'android/static-assets/icons/big_rx.png',
-                                            description: 'bolt!'
-                                        }
-                                    }
-                                ]
-                            },
-                            textExtendedBadges: {}
-                        }
-                    },
-                    aggregatedDiscountInfoV3: {
-                        header: "\u20B9125 OFF",
-                        subHeader: "ABOVE \u20B9299",
-                        discountTag: 'FLAT DEAL',
-                        logoCtx: {
-                            text: 'BENEFITS'
-                        }
-                    },
-                    orderabilityCommunication: {
-                        title: {},
-                        subTitle: {},
-                        message: {},
-                        customIcon: {},
-                        commsStyling: {}
-                    },
-                    differentiatedUi: {
-                        displayType: 'ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT',
-                        differentiatedUiMediaDetails: {
-                            mediaType: 'ADS_MEDIA_ENUM_IMAGE',
-                            lottie: {},
-                            video: {}
-                        }
-                    },
-                    reviewsSummary: {},
-                    displayType: 'RESTAURANT_DISPLAY_TYPE_DEFAULT',
-                    restaurantOfferPresentationInfo: {},
-                    externalRatings: {
-                        aggregatedRating: {
-                            rating: '4.2',
-                            ratingCount: '1.5K+'
-                        },
-                        source: 'GOOGLE',
-                        sourceIconImageId: 'v1704440323/google_ratings/rating_google_tag'
-                    },
-                    ratingsDisplayPreference: 'RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY',
-                    campaignId: 'a69873fb-d102-46a8-a767-857da09eccb1'
-                },
-                analytics: {},
-                cta: {
-                    link: 'swiggy://menu?restaurant_id=12517&source=collection&query=Burger',
-                    text: 'RESTAURANT_MENU',
-                    type: 'DEEPLINK'
-                },
-                widgetId: 'collectionV5RestaurantListWidget_SimRestoRelevance_food'
-            },
-            relevance: {
-                type: 'RELEVANCE_TYPE_ON_MENU_RETURN',
-                sectionId: 'MENU_RETURN_FOOD'
-            }
-        }
-    },
-    {
-        card: {
-            card: {
-                '@type': 'type.googleapis.com/swiggy.presentation.food.v2.Restaurant',
-                info: {
-                    id: '253710',
-                    name: "McDonald's",
-                    cloudinaryImageId: 'RX_THUMBNAIL/IMAGES/VENDOR/2025/1/9/8edf8650-47fa-4a0a-a905-5cea4138a996_253710.JPG',
-                    locality: 'Sector 18',
-                    areaName: 'Sector 18',
-                    costForTwo: "\u20B9400 for two",
-                    cuisines: [
-                        'American'
-                    ],
-                    avgRating: 4.4,
-                    parentId: '630',
-                    avgRatingString: '4.4',
-                    totalRatingsString: '17K+',
-                    sla: {
-                        deliveryTime: 20,
-                        lastMileTravel: 1.9,
-                        serviceability: 'SERVICEABLE',
-                        slaString: '20-25 mins',
-                        lastMileTravelString: '1.9 km',
-                        iconType: 'ICON_TYPE_EMPTY'
-                    },
-                    availability: {
-                        nextCloseTime: '2026-02-09 00:55:00',
-                        opened: true
-                    },
-                    badges: {
-                        imageBadges: [
-                            {
-                                imageId: 'android/static-assets/icons/big_rx.png',
-                                description: 'bolt!'
-                            },
-                            {
-                                imageId: 'Ratnesh_Badges/Rx_Awards_2025/Bolt.png',
-                                description: 'Delivery!'
-                            }
-                        ]
-                    },
-                    isOpen: true,
-                    type: 'F',
-                    badgesV2: {
-                        entityBadges: {
-                            textExtendedBadges: {},
-                            textBased: {},
-                            imageBased: {
-                                badgeObject: [
-                                    {
-                                        attributes: {
-                                            imageId: 'android/static-assets/icons/big_rx.png',
-                                            description: 'bolt!'
-                                        }
-                                    },
-                                    {
-                                        attributes: {
-                                            imageId: 'Ratnesh_Badges/Rx_Awards_2025/Bolt.png',
-                                            description: 'Delivery!'
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    aggregatedDiscountInfoV3: {
-                        header: 'ITEMS',
-                        subHeader: "AT \u20B949",
-                        logoCtx: {
-                            text: 'BENEFITS'
-                        }
-                    },
-                    orderabilityCommunication: {
-                        title: {},
-                        subTitle: {},
-                        message: {},
-                        customIcon: {},
-                        commsStyling: {}
-                    },
-                    differentiatedUi: {
-                        displayType: 'ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT',
-                        differentiatedUiMediaDetails: {
-                            mediaType: 'ADS_MEDIA_ENUM_IMAGE',
-                            lottie: {},
-                            video: {}
-                        }
-                    },
-                    reviewsSummary: {},
-                    displayType: 'RESTAURANT_DISPLAY_TYPE_DEFAULT',
-                    restaurantOfferPresentationInfo: {},
-                    externalRatings: {
-                        aggregatedRating: {
-                            rating: '4.2',
-                            ratingCount: '7.4K+'
-                        },
-                        source: 'GOOGLE',
-                        sourceIconImageId: 'v1704440323/google_ratings/rating_google_tag'
-                    },
-                    ratingsDisplayPreference: 'RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY'
-                },
-                analytics: {},
-                cta: {
-                    link: 'swiggy://menu?restaurant_id=253710&source=collection&query=Burger',
-                    text: 'RESTAURANT_MENU',
-                    type: 'DEEPLINK'
-                },
-                widgetId: 'collectionV5RestaurantListWidget_SimRestoRelevance_food'
-            },
-            relevance: {
-                type: 'RELEVANCE_TYPE_ON_MENU_RETURN',
-                sectionId: 'MENU_RETURN_FOOD'
-            }
-        }
-    }
-];
-exports.default = resList;
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Shimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 8,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-cards"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Shimmer.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Shimmer;
+exports.default = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire1edd", {}, null, null, "http://localhost:1234")
+  $parcel$ReactRefreshHelpers$9ecf.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire1edd", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=1_episode.0f77c784.js.map

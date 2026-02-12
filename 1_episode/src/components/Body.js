@@ -1,90 +1,71 @@
 import ResCard from './ResCard';
-import resList from '../utils/mockData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Shimmer from './Shimmer';
 
-let listofRestaurantsJS = [
-  {
-    info: {
-      id: '93957',
-      name: 'The Burger Club',
-      cloudinaryImageId:
-        'FOOD_CATALOG/IMAGES/CMS/2025/9/7/f7c46f0b-5e13-4b9e-bdae-eeb1c9bf7252_e7fc437c-c762-4a19-b426-2fc080e23c4b.jpg',
-      locality: 'B Block',
-      areaName: 'Sector 41',
-      costForTwo: '₹250 for two',
-      cuisines: [
-        'Burgers',
-        'wrap',
-        'Salads',
-        'Fast Food',
-        'Desserts',
-        'Coffee',
-        'Beverages',
-      ],
-      avgRating: 3,
-      parentId: '2285',
-      avgRatingString: '3.0',
-      totalRatingsString: '20K+',
-      promoted: true,
-      adTrackingId:
-        'cid=1b5549a1-c663-4b77-9de5-4b06162f7783~p=0~adgrpid=1b5549a1-c663-4b77-9de5-4b06162f7783#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=93957~plpr=COLLECTION~eid=d327bbf7-5e85-429d-8426-3c1a55b04443~srvts=1770557783415~collid=83637',
-      sla: {
-        deliveryTime: 28,
-        lastMileTravel: 4.7,
-        serviceability: 'SERVICEABLE',
-        slaString: '25-30 mins',
-        lastMileTravelString: '4.7 km',
-        iconType: 'ICON_TYPE_EMPTY',
-      },
-    },
-  },
-  {
-    info: {
-      id: '93952',
-      name: 'kfc',
-      cloudinaryImageId:
-        'FOOD_CATALOG/IMAGES/CMS/2025/9/7/f7c46f0b-5e13-4b9e-bdae-eeb1c9bf7252_e7fc437c-c762-4a19-b426-2fc080e23c4b.jpg',
-      locality: 'B Block',
-      areaName: 'Sector 41',
-      costForTwo: '₹250 for two',
-      cuisines: [
-        'Burgers',
-        'wrap',
-        'Salads',
-        'Fast Food',
-        'Desserts',
-        'Coffee',
-        'Beverages',
-      ],
-      avgRating: 4.2,
-      parentId: '2285',
-      avgRatingString: '4.0',
-      totalRatingsString: '20K+',
-      promoted: true,
-      adTrackingId:
-        'cid=1b5549a1-c663-4b77-9de5-4b06162f7783~p=0~adgrpid=1b5549a1-c663-4b77-9de5-4b06162f7783#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=93957~plpr=COLLECTION~eid=d327bbf7-5e85-429d-8426-3c1a55b04443~srvts=1770557783415~collid=83637',
-      sla: {
-        deliveryTime: 28,
-        lastMileTravel: 4.7,
-        serviceability: 'SERVICEABLE',
-        slaString: '25-30 mins',
-        lastMileTravelString: '4.7 km',
-        iconType: 'ICON_TYPE_EMPTY',
-      },
-    },
-  },
-];
 const Body = () => {
-  let [listofRestaurants, setlistRestaurants] = useState(resList);
+  let [listofRestaurants, setlistRestaurants] = useState([]);
+
+  let [filteredRestaurant, setfilteredRestaurant] = useState([]);
+
+  const [searchText, setSearchText] = useState('');
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      'https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING'
+    );
+
+    const response = await data.json();
+
+    console.log(response);
+
+    setlistRestaurants(
+      response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    setfilteredRestaurant(
+      response.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  };
+
+  //conditional rendering
+  if (listofRestaurants.length === 0) {
+    return <Shimmer />;
+  }
   return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="searchbox"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          {/* onclick of this button i want to filter and update the ui */}
+          <button
+            onClick={() => {
+              const filteredRestaurant = listofRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setfilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             //we need filter logic over here
             const filteredList = listofRestaurants.filter(
-              (res) => res.card.card.info.avgRating > 4.5
+              (res) => res.info.avgRating > 4.5
             );
             setlistRestaurants(filteredList);
           }}
@@ -93,8 +74,8 @@ const Body = () => {
         </button>
       </div>
       <div className="res-cards">
-        {listofRestaurants.map((restaurant) => (
-          <ResCard resData={restaurant} key={restaurant.card.card.info.id} />
+        {filteredRestaurant.map((restaurant) => (
+          <ResCard resData={restaurant} key={restaurant.info.id} />
         ))}
       </div>
     </div>

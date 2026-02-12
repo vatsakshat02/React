@@ -3,13 +3,12 @@ import { CDN_URl } from '../utils/constant';
 const ResCard = (props) => {
   const { resData } = props;
 
-  const { cloudinaryImageId, name, cuisines, avgRating, sla } =
-    resData?.card.card.info;
+  const { cloudinaryImageId, name, cuisines, avgRating, sla } = resData?.info;
   return (
     <div className="ResCard" style={{ backgroundColor: '#f0f0f0' }}>
       <img
         className="res-logo"
-        src={CDN_URl + resData.card.card.info.cloudinaryImageId}
+        src={CDN_URl + resData.info.cloudinaryImageId}
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(', ')}</h4>
