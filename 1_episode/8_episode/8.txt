@@ -1,0 +1,267 @@
+so to day we gonna learn about class based components and basically how these works as they are asked in interviews a lot of times 
+
+ we are gonna test it in the About section 
+ idea is to showcase the team members and fetch data from github 
+
+ class based component is a normal javascript class its syntax is like
+
+ class {Class based component name} extends React.Component or class {Class based component name} extends Component
+
+ EXAMPLE:
+  class UserClass extends React.Component {
+
+    render(){
+         <div>
+      <h1>This is a About us Page</h1>
+      <h2>this is Zeekuworld</h2>
+      <User />
+    </div>
+    }
+  }
+
+  just like in function component here we also have render and this render will also renders a piece of jsx but in function component the function returns the piece of jsx
+
+  this react.component is a react class and we are just inheriting some properties from it thats it 
+
+  now about props you send them the same way you send props in the function based component the only difference is how to receive them
+
+  so first you have to create a constructor and then add parameter props in it and then write in the constructor super(props)
+
+whats the need of writing super(props):
+While this.props works outside the constructor (in render, etc.) even if you just call super(), it will be undefined inside the constructor if you don't pass props to super(props). 
+With super(props): You can log or use this.props inside the constructor.
+Without super(props): this.props is undefined in the constructor, which can cause bugs if you are setting up state based on incoming props. 
+
+class UserClass extends React.Component {
+  constructor(props: string) {
+    super(props);
+  }
+}
+
+without super(props) it will give error 
+
+and to access these properties dont forget to use this.props.(property name)
+like this:
+
+import React from 'react';
+import { userProps } from '../types/Props';
+class UserClass extends React.Component<userProps> {
+  constructor(props: userProps) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="user-card">
+        <h2>Name: {this.props.name}</h2>
+        <h3>Location: {this.props.location}</h3>
+        <h4>Contact: @vatsakshat02 </h4>
+      </div>
+    );
+  }
+}
+
+export default UserClass;
+
+now we will learn how to create state variables in class based components. Hooks are a new concept in React and before this we were able to create state variables so basically remember this that when the instance of a class is created we have created a state
+
+when you say you are loading a class based component that means that you are basically creating an instance of a class
+
+when you create a class this constructor is called so this is the best place to create state variables
+
+import React from 'react';
+import { userProps } from '../types/Props';
+class UserClass extends React.Component<userProps> {
+  constructor(props: userProps) {
+    super(props);
+
+    this.state = {
+      count: 0,
+      count2: 2,
+    };
+  }
+}
+
+we have created a variable count and initialised it with value 0 here the state is an object that has all the state variables information
+
+the state is a big object that will contain all the big state variables 
+
+now we will see how we can update these variables in function we used to do setCount
+
+we gonna create a button that everytime you click it the count value will increase and by this we will learn how to update the count or the state value 
+
+never ever update state variables directly never ever do that 
+
+so react gives us this.setState and this will have all the updated values of state variables see the code below 
+
+  <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+></button>
+
+if you want to update count2 as well then 
+  <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+              count2: this.state.count2 +1,
+            });
+          }}
+></button>
+
+class component mounted into the webpage is same as class component loaded into the webpage
+
+___LIFE_CYCLE_OF_CLASS_BASED_COMPONENTS___
+lets go to the about component react will see okay we have return whats written in it then it will mount the html part, after that it sees oh a component userclass has been called so then it will start mounting the Userclas component and the first thing that it will mount will be the constructor then the render is called 
+
+
+suppose we have 2 class based components and one is inside of the another then realise the order first we will call parent constructor then its render then the child constructor then the child render 
+
+and super props we write because without it we cant use props and react will throw an error cause your constructor never ran because of this we can access the propeties of props 
+
+react gives us another component knowns as componentDidMount() it checks wether everything is mounted or not and listen first constructor then render then this component is called and in the same order remember it 
+
+why it is used: because we have to do things that we want to do after things are being mounted and what are those things? API calls
+once everything is mounted we will do the Api calls
+
+so why do we even make api calls after rendering for this remember we follow second approach in react that we will render the components do a api call get the data and then re render it so first we will mount it then we will make our api call and then remount it again 
+
+suppose that we call same component twice: What will happen?
+
+    return (
+      <div>
+        <h1>This is a About us Page</h1>
+        <h2>this is Zeekuworld</h2>
+        <User />
+
+        <UserClass name={'Riya'} location={'Gurugram'} />
+         <UserClass name={'Riya'} location={'Gurugram'} />
+      </div>
+    );
+
+well even if call same component twice react will consider it as two instances beng created thats it and its life cycle will be
+
+parent constructor
+parent renderer
+1_child constructor
+1_child renderer
+2_child constructor
+2_child renderer
+1_child mounted successfully
+2_child mounted successfully
+parent mounted successfully
+
+read the lifecycle of react : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+by seeing this let me explain the above lifecycle react basically batches the render phase and the commit phase of the two childs so first it will render them and then it will update them so thats why 
+1_child constructor
+1_child renderer
+2_child constructor
+2_child renderer
+1_child mounted successfully
+2_child mounted successfully
+
+this happens in this sequence
+updating dom is an expensive tasks so react tries to basically batch the rendering phase and then the updating phase so that it can all together updates the dom 
+
+UserClass.tsx:
+import React from 'react';
+import { userProps, userState } from '../types/Props';
+class UserClass extends React.Component<userProps, userState> {
+  constructor(props: userProps) {
+    super(props);
+
+    this.state = {
+      count: 0,
+      count2: 2,
+    };
+
+    console.log('child constructor');
+  }
+
+  componentDidMount(): void {
+    console.log('Child Component Mounted');
+  }
+
+  render() {
+    const { name, location } = this.props;
+    const { count, count2 } = this.state;
+    console.log('child renderer');
+    return (
+      <div className="user-card">
+        <h2>Count: {this.state.count}</h2>
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          Click meee
+        </button>
+        <h2>Name: {this.props.name}</h2>
+        <h3>Location: {this.props.location}</h3>
+        <h4>Contact: @vatsakshat02 </h4>
+      </div>
+    );
+  }
+}
+
+export default UserClass;
+
+About.tsx:
+import User from './User';
+import UserClass from './UserClass';
+import React from 'react';
+import { userState, userProps } from '../types/Props';
+class About extends React.Component<userProps, userState> {
+  constructor(props: userProps) {
+    super(props);
+    console.log('parent constructor');
+  }
+
+  componentDidMount(): void {
+    console.log('Parent Mounted Successfully');
+  }
+  render() {
+    console.log('parent renderer');
+    return (
+      <div>
+        <h1>This is a About us Page</h1>
+        <h2>this is Zeekuworld</h2>
+        <User />
+
+        <UserClass name={'Riya'} location={'Gurugram'} />
+      </div>
+    );
+  }
+}
+
+export default About;
+
+now we gonna remove counts and everything from the main code and start the api call 
+now we gonna use componentDidMount as useEffect hook as it will be called when everything is rendered so we are basically writing our api code in it 
+
+  async componentDidMount() {
+    // console.log('Child Component Mounted');
+    const data = await fetch('https://api.github.com/users/vatsakshat02');
+    const response = await data.json();
+    console.log(response);
+  }
+
+  now after getting that data we will put it into a state variable so that we could update the ui
+
+  we have another component known as componentDidUpdate it is called after componentDidMount and it checks that everythinghas been updated or not so now the whole cycle is like
+
+  parent constructor (dummy data)
+  parent render (dummy data)
+  componentDidMount is called: -> API call
+  <this.setState>
+   then it will update and re render
+   new data so new content 
+   componentDidUpdate will be called 
+
+   anothe rcomponent we have componentWillUnmount and it is used when something is disappearing from the html element when it is unmouting basically when i go from about to contact web page and soo onn all the data will be unmounted 

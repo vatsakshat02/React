@@ -1,0 +1,16 @@
+today we gonna make our code clean and create custom hooks 
+
+if you follow single responsibility function then basically you can make the code reusable, maintainable, testable and very easy to debug if there are cases of bug 
+
+single responsibility function is when you breakdown your code just like you are doing right now into smaller components and each component should perform one tasks only. It does not hard and fast rule its meaning is code should be modular simple clean and nice
+
+CUSTOM HOOKS:
+a hook is just a javascript function nothing else to create a custom hook create a file in the utils folder and start the name of the file with 'use'. By this react will understand that you have created a hook and use that hook
+
+so we have created useRestaurantMenu.ts in the utility file and its work is to basically fetch the data and give that to RestaurantMenu
+
+to write custom hooks always ask yourself two question what it is asking as a parameter and what it is returning 
+
+there is an evenlistenr called as online to check wether the user is online and offline by checking there internet connection. It is given to us by browser and window function
+
+thats how dino game is made you make a hook to check if its offline or online and when the user is offline you load the dino game
