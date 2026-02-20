@@ -1,0 +1,11 @@
+in todays class we gonna learn how to style our app and how to add css to our application 
+
+1st way is to write using styles.css and second way is to write using sass or scss which is basically superpowers to css but sass or scss cant be used for large scale applications
+
+the only way and recommended way is styled components and we have different libraries and frameworks for css which makes our life very easy like material ui [they have prewritten code just import the code and you have great css ] , Bootstrap ui, Chakra ui, ant design [these are the frameworks and libraries]
+
+in this video we gonna learn Tailwind Css in depth 
+
+Tailwind Css  it works with different framework like Laravel, SvelteKit, React Router, Nuxt, and SolidJS.
+
+Post CSS to transform css along with JavaScript 

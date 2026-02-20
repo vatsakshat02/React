@@ -17,10 +17,62 @@ thats how dino game is made you make a hook to check if its offline or online an
 
 how to optimise the code: always remember to breakdown your code into smaller pieces that instead of one javascript file it should have smaller bundles of js file 
 
-This process is known as chunking/ Code Splitting/ Dynamic bundling : to breakdown your app into smaller chunks 
+This process is known as chunking/ Code Splitting/ Dynamic bundling / Lazy Loading / onDemand loading/ Dynamic import: to breakdown your app into smaller chunks 
 
 logical bundling is the type of bundling where we bundle the code that provides the logic enough for a feature 
 
 like make my trip has different verticals such as hotels trains etc so for example hotels is a component and it has several mini component or child components of its own same goes for flight tickets and every other component 
 
 so now we gonna do the same thing for our app by creating groceries section
+
+now everytime i dont want to import all my components at once in js for this we will use lazy loading in lazy loading what happens is that the comnponent wont be loaded until its called for example if i dont type
+http://localhost:1234/grocery the grocery section wont be loaded
+
+to have this we have to import it using lazy function. Lazy function is a function provided to us by react
+ syntax 
+ const Grocery = lazy(()=> import(link_to_the_component)) 
+
+ this helps to load the code or bundle only when its needed so realise this that it is separate from our main bundle and it is another bundle now when you click on the link and it isnt able to load or show error here is its explanation
+
+ at the start we have only one file app.js and then we have another file grocery that is called when we click on to it suppose you clicked on to it and that file takes 12ms to load now react see oh where is the file in that 12ms and since our data is coming and it isnt there react throws an error saying that the code isnt there to sort this problem we use something known as  suspense
+
+ suspense it is a component that is given to us by react and you can wrap your component in Suspense and give it a fall back that means what to load until a data comes in 
+
+
+
+ const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Body />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: 'contact',
+        element: <Contact />,
+      },
+      {
+        path: '/restaurants/:resId',
+        element: <RestaurantMenu />,
+      },
+      {
+        path: '/grocery',
+        element: (
+          <Suspense fallback={<h1>Loadingg.......</h1>}>
+            {' '}
+            <Grocery />
+          </Suspense>
+        ),
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+
+like this 
