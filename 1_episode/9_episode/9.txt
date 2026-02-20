@@ -14,3 +14,13 @@ to write custom hooks always ask yourself two question what it is asking as a pa
 there is an evenlistenr called as online to check wether the user is online and offline by checking there internet connection. It is given to us by browser and window function
 
 thats how dino game is made you make a hook to check if its offline or online and when the user is offline you load the dino game
+
+how to optimise the code: always remember to breakdown your code into smaller pieces that instead of one javascript file it should have smaller bundles of js file 
+
+This process is known as chunking/ Code Splitting/ Dynamic bundling : to breakdown your app into smaller chunks 
+
+logical bundling is the type of bundling where we bundle the code that provides the logic enough for a feature 
+
+like make my trip has different verticals such as hotels trains etc so for example hotels is a component and it has several mini component or child components of its own same goes for flight tickets and every other component 
+
+so now we gonna do the same thing for our app by creating groceries section
